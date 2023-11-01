@@ -93,14 +93,6 @@ The four plots that you will need to construct are shown below.
 
 
 ### Plot 1
-library("data.table")
-
-setwd("~/Desktop/datasciencecoursera/4_Exploratory_Data_Analysis/project/data")
-
-#Reads in data from file then subsets data for specified dates
-powerDT <- data.table::fread(input = "household_power_consumption.txt"
-                             , na.strings="?"
-                             )
 
 # Prevents histogram from printing in scientific notation
 powerDT[, Global_active_power := lapply(.SD, as.numeric), .SDcols = c("Global_active_power")]
